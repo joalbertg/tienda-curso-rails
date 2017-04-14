@@ -1,0 +1,15 @@
+<h1>Super app</h1>
+
+<h2>Proveedores</h2>
+
+<ul>
+  <% Proveedor.all.each do |proveedor| %>
+    <li><%= link_to proveedor.nombre, proveedor_productos_path(proveedor) %></li>
+    <hr>
+    <ul>
+      <% proveedor.productos.each do |producto| %>
+        <li><%= producto.nombre %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>

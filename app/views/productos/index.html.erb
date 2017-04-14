@@ -1,0 +1,34 @@
+<div class="productos">
+    <h1>Productos de <%= @proveedor.nombre %></h1>
+
+  <%= link_to 'New Producto', new_proveedor_producto_path(@proveedor) %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @productos.each do |producto| %>
+        <tr>
+          <td><%= producto.nombre %></td>
+          <td><%= producto.cantidad %></td>
+          <td><%= producto.precio %></td>
+          <td><%= producto.categoria.nombre %></td>
+          <td><%= link_to 'Show', proveedor_producto_path(@proveedor, producto) %></td>
+          <td><%= link_to 'Edit', edit_proveedor_producto_path(@proveedor,producto) %></td>
+          <td><%= link_to 'Destroy', [@proveedor, producto], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>

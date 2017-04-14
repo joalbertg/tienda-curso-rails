@@ -1,0 +1,22 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @producto.nombre %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @producto.cantidad %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @producto.precio %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @producto.categoria.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_proveedor_producto_path(@proveedor, @producto) %> |
+<%= link_to 'Back', proveedor_productos_path(@proveedor.id) %>
